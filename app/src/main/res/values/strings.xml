@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pong</string>
+    <string-array name="dificultades">
+               
+        <item>Facil</item>
+               
+        <item>Normal</item>
+               
+        <item>Dificil</item>
+    </string-array>
+</resources>
