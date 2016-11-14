@@ -17,14 +17,14 @@ public class GameThread extends Thread {
 
     private SurfaceHolder surface;
     private Paint paint;
-    private GameState estado;
-    private Context context;
-    private int segundos;
+    public GameState estado;
 
-    public GameThread(SurfaceHolder surfaceHolder, Context context, Display display, boolean modo, String dificultad)
+    public GameThread(SurfaceHolder surfaceHolder, Display display, boolean modo, String dificultad)
     {
+
         surface = surfaceHolder;
         paint = new Paint();
+
         //si modo es igual a 1 vs 1
         if(modo)
         {
@@ -35,8 +35,7 @@ public class GameThread extends Thread {
         {
             estado = new GameStateVsPC(display, dificultad);
         }
-        this.context = context;
-        segundos = 2000;
+
     }
 
     @Override
@@ -50,6 +49,8 @@ public class GameThread extends Thread {
                 //dibujamos la pantalla
                 estado.dibujar(canvas, paint);
                 surface.unlockCanvasAndPost(canvas);
+
+
 
                 // se espera hasta que se toque la pantalla
                 while (estado.getGol()) {
@@ -94,15 +95,5 @@ public class GameThread extends Thread {
         this.estado = estado;
     }
 
-    public void setContext(Context context) {
-        this.context = context;
-    }
 
-    public int getSegundos() {
-        return segundos;
-    }
-
-    public void setSegundos(int segundos) {
-        this.segundos = segundos;
-    }
 }

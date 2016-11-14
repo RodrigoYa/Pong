@@ -16,6 +16,7 @@ public class ActivityOpcionesJuego extends AppCompatActivity {
         btn1v1 = (Button)findViewById(R.id.btn1v1);
         btnVsPC = (Button)findViewById(R.id.btnVsPC);
 
+        //para jugar 1vs1
         btn1v1.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -26,6 +27,8 @@ public class ActivityOpcionesJuego extends AppCompatActivity {
             }
 
         });
+
+        //para jugar contra la compu
         btnVsPC.setOnClickListener(new View.OnClickListener()
         {
             @Override

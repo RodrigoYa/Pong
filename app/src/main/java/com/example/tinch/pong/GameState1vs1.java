@@ -1,11 +1,13 @@
 package com.example.tinch.pong;
 
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.Display;
 import android.view.MotionEvent;
+
 import java.util.Random;
 
 
@@ -16,7 +18,7 @@ import java.util.Random;
 public class GameState1vs1 extends GameState {
 
     Random random;
-    //private boolean gol;
+
     //pantalla
     final int _screenWidth;
     final int _screenHeight;
@@ -41,8 +43,11 @@ public class GameState1vs1 extends GameState {
     //puntaje
     int puntosBateSuperior, puntosBateInferior;
 
+    Context context;
+
     public GameState1vs1(Display display)
     {
+        this.context = context;
         random = new Random();
         gol = false;
         //resolucion pantalla
@@ -85,8 +90,9 @@ public class GameState1vs1 extends GameState {
             velocidadPelotaY = random.nextInt(5) + 7;
             velocidadPelotaY *= -1;
             puntosBateSuperior +=1;
-            if(puntosBateSuperior == 10)
+            if(puntosBateSuperior == 1)
             {
+
                 //poner cartel de victoria
             }
             gol = true;
@@ -100,8 +106,9 @@ public class GameState1vs1 extends GameState {
             velocidadPelotaX = random.nextInt(5) + 7;
             velocidadPelotaY = random.nextInt(5) + 7;
             puntosBateInferior += 1;
-            if(puntosBateInferior == 10)
+            if(puntosBateInferior == 1)
             {
+
                 //poner cartel de victoria
             }
             gol = true;

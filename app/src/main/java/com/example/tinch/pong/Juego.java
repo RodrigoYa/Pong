@@ -9,18 +9,19 @@ import android.view.WindowManager;
 
 public class Juego extends SurfaceView implements SurfaceHolder.Callback
 {
-    private GameThread thread;
+    public GameThread thread;
 
     public Juego(Context context, boolean modo, String dificultad) {
         super(context);
         Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+
         //para escuchar los eventos
         SurfaceHolder surface = getHolder();
         surface.addCallback(this);
         setFocusable(true);
 
         //instanciamos thread
-        thread = new GameThread(surface, context, display, modo, dificultad);
+        thread = new GameThread(surface, display, modo, dificultad);
     }
 
     @Override

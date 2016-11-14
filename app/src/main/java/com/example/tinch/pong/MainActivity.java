@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity  {
         btnOpciones = (Button)findViewById(R.id.btnOpciones);
         btnSalir = (Button)findViewById(R.id.btnSalir);
 
+        //para ir al activity de las opciones del juego
         btnJugar.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity  {
 
         });
 
+        //para ir al activity de las opciones
         btnOpciones.setOnClickListener(new View.OnClickListener()
         {
             @Override

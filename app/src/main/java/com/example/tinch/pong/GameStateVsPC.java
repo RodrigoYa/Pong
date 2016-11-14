@@ -1,11 +1,14 @@
 package com.example.tinch.pong;
 
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.Display;
 import android.view.MotionEvent;
+import android.widget.Toast;
+
 import java.util.Random;
 
 /**
@@ -40,9 +43,12 @@ public class GameStateVsPC extends GameState {
     //puntaje
     private int puntosBateSuperior, puntosBateInferior;
 
+    Context context;
+
 
     GameStateVsPC(Display display, String dificultad)
     {
+        this.context = context;
         random = new Random();
         gol = false;
 
@@ -99,7 +105,7 @@ public class GameStateVsPC extends GameState {
             velocidadPelotaY = random.nextInt(5) + 7;
             velocidadPelotaY *= -1;
             puntosBateSuperior +=1;
-            if(puntosBateSuperior == 10)
+            if(puntosBateSuperior == 1)
             {
                 //poner cartel de victoria
             }
@@ -113,8 +119,9 @@ public class GameStateVsPC extends GameState {
             velocidadPelotaX = random.nextInt(5) + 7;
             velocidadPelotaY = random.nextInt(5) + 7;
             puntosBateInferior += 1;
-            if(puntosBateInferior == 10)
+            if(puntosBateInferior == 1)
             {
+
                 //poner cartel de victoria
             }
             gol = true;
