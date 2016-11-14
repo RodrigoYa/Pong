@@ -6,9 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.Display;
 import android.view.MotionEvent;
-
 import java.util.Random;
-import java.util.logging.Handler;
 
 /**
  * Created by tinch on 7/10/2016.
@@ -101,6 +99,10 @@ public class GameStateVsPC extends GameState {
             velocidadPelotaY = random.nextInt(5) + 7;
             velocidadPelotaY *= -1;
             puntosBateSuperior +=1;
+            if(puntosBateSuperior == 10)
+            {
+                //poner cartel de victoria
+            }
             gol = true;
 
         }
@@ -111,6 +113,10 @@ public class GameStateVsPC extends GameState {
             velocidadPelotaX = random.nextInt(5) + 7;
             velocidadPelotaY = random.nextInt(5) + 7;
             puntosBateInferior += 1;
+            if(puntosBateInferior == 10)
+            {
+                //poner cartel de victoria
+            }
             gol = true;
         }
 
@@ -128,9 +134,6 @@ public class GameStateVsPC extends GameState {
         {
             velocidadPelotaY *= -1;
         }
-
-        velocidadPelotaX *= 1.0001;
-        velocidadPelotaY *= 1.0001;
         BateSuperiorIA();
     }
 

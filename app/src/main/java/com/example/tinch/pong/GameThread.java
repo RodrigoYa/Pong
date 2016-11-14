@@ -1,16 +1,11 @@
 package com.example.tinch.pong;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
-import android.widget.Toast;
 
 
 /**
@@ -58,8 +53,7 @@ public class GameThread extends Thread {
 
                 // se espera hasta que se toque la pantalla
                 while (estado.getGol()) {
-                    //Toast toast = Toast.makeText(context,"gol de tu mama",Toast.LENGTH_SHORT);
-                    //toast.show();
+
                 }
             }
         }
@@ -71,19 +65,6 @@ public class GameThread extends Thread {
         return true;
     }
 
-    /*Handler mHandler = new Handler(Looper.getMainLooper()) {
-        @Override
-        public void handleMessage(Message message) {
-            // This is where you do your work in the UI thread.
-            // Your worker tells you in the message what to do.
-        }
-    };
-
-    void workerThread() {
-        // And this is how you call it from the worker thread:
-        Message message = mHandler.obtainMessage();
-        message.sendToTarget();
-    }*/
     public GameState getGameState()
     {
         return estado;
