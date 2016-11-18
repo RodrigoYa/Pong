@@ -7,10 +7,13 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.WindowManager;
 
+//La clase SurfaceView nos provee una superficie dedicada
+//para dibujar, la cual le podemos controlar el formato
+//La interface SurfaceHolder.Callback se utiliza para
+//recibir informacion acerca de loscambios en la superficie
 public class Juego extends SurfaceView implements SurfaceHolder.Callback
 {
     public GameThread thread;
-
     public Juego(Context context, boolean modo, String dificultad) {
         super(context);
         Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
@@ -35,19 +38,20 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback
         //sino el del estado
         return thread.getGameState().onTouchEvent(e);
 
+
     }
     //se implementa del SurfaceHolder.Callback interface
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width,
                                int height) {}
 
-    //se implementa del SurfaceHolder.Callback interface
+    //se implementa del SurfaceView interface
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         thread.start();
     }
 
-    //se implementa del SurfaceHolder.Callback interface
+    //se implementa del SurfaceView interface
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
         try {
@@ -56,4 +60,5 @@ public class Juego extends SurfaceView implements SurfaceHolder.Callback
         catch (Exception e){e.printStackTrace();}
 
     }
+
 }

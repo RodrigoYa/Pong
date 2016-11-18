@@ -2,12 +2,9 @@ package com.example.tinch.pong;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 public class ActivityJuego extends AppCompatActivity {
 
@@ -28,8 +25,5 @@ public class ActivityJuego extends AppCompatActivity {
         Juego game = new Juego(this,getIntent().getExtras().getBoolean("modo"),dificultad);
         setContentView(game);
 
-
-
     }
-
 }

@@ -7,8 +7,6 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.Display;
 import android.view.MotionEvent;
-import android.widget.Toast;
-
 import java.util.Random;
 
 /**
@@ -105,7 +103,7 @@ public class GameStateVsPC extends GameState {
             velocidadPelotaY = random.nextInt(5) + 7;
             velocidadPelotaY *= -1;
             puntosBateSuperior +=1;
-            if(puntosBateSuperior == 1)
+            if(puntosBateSuperior == 5)
             {
                 //poner cartel de victoria
             }
@@ -119,10 +117,10 @@ public class GameStateVsPC extends GameState {
             velocidadPelotaX = random.nextInt(5) + 7;
             velocidadPelotaY = random.nextInt(5) + 7;
             puntosBateInferior += 1;
-            if(puntosBateInferior == 1)
+            if(puntosBateInferior == 5)
             {
-
                 //poner cartel de victoria
+
             }
             gol = true;
         }
@@ -207,6 +205,4 @@ public class GameStateVsPC extends GameState {
 
     }
 
-    public boolean getGol(){return this.gol;}
-    public void setGol(boolean gol){this.gol = gol;}
 }

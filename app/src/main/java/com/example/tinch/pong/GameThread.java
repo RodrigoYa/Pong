@@ -1,6 +1,5 @@
 package com.example.tinch.pong;
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.Display;
@@ -18,10 +17,8 @@ public class GameThread extends Thread {
     private SurfaceHolder surface;
     private Paint paint;
     public GameState estado;
-
     public GameThread(SurfaceHolder surfaceHolder, Display display, boolean modo, String dificultad)
     {
-
         surface = surfaceHolder;
         paint = new Paint();
 
@@ -50,12 +47,8 @@ public class GameThread extends Thread {
                 estado.dibujar(canvas, paint);
                 surface.unlockCanvasAndPost(canvas);
 
-
-
                 // se espera hasta que se toque la pantalla
-                while (estado.getGol()) {
-
-                }
+                while (estado.getGol()) {}
             }
         }
     }

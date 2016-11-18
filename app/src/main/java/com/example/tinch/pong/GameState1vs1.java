@@ -90,7 +90,7 @@ public class GameState1vs1 extends GameState {
             velocidadPelotaY = random.nextInt(5) + 7;
             velocidadPelotaY *= -1;
             puntosBateSuperior +=1;
-            if(puntosBateSuperior == 1)
+            if(puntosBateSuperior == 5)
             {
 
                 //poner cartel de victoria
@@ -106,7 +106,7 @@ public class GameState1vs1 extends GameState {
             velocidadPelotaX = random.nextInt(5) + 7;
             velocidadPelotaY = random.nextInt(5) + 7;
             puntosBateInferior += 1;
-            if(puntosBateInferior == 1)
+            if(puntosBateInferior == 5)
             {
 
                 //poner cartel de victoria
