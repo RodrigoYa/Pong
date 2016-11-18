@@ -7,14 +7,13 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity  {
-    Button btnJugar,btnOpciones,btnSalir;
+    Button btnJugar,btnOpciones;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnJugar = (Button)findViewById(R.id.btnJugar);
         btnOpciones = (Button)findViewById(R.id.btnOpciones);
-        btnSalir = (Button)findViewById(R.id.btnSalir);
 
         //para ir al activity de las opciones del juego
         btnJugar.setOnClickListener(new View.OnClickListener()

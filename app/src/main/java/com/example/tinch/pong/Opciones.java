@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import static android.app.PendingIntent.getActivity;
 
 public class Opciones extends AppCompatActivity {
 
